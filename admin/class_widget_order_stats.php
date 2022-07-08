@@ -32,10 +32,11 @@ class Widget_order_stats {
 
     public function __construct() {
         add_action( 'wp_dashboard_setup', array( $this, 'wc_dashboard_widget_order_stats_init' ) );
+
     }
 
     public function wc_dashboard_widget_order_stats_init() {
-        wp_add_dashboard_widget( 'woocommerce_dashboard_widget_stats', __( 'WooCommerce order stats', 'woocommerce' ), array( $this, 'wc_dashboard_widget_order_stats' ), '', 'side', 'high' );
+        wp_add_dashboard_widget( 'woocommerce_dashboard_widget_stats', __( 'WooCommerce order stats', 'woocommerce' ), array( $this, 'wc_dashboard_widget_order_stats' ), '', 'normal', 'high' );
     }
 
     function wc_dashboard_widget_order_stats() {
@@ -144,8 +145,6 @@ class Widget_order_stats {
 
 <?php
     }
-
-
 
 }
 new Widget_order_stats();
