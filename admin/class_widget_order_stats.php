@@ -35,7 +35,7 @@ class Widget_order_stats {
     }
 
     public function wc_dashboard_widget_order_stats_init() {
-        wp_add_dashboard_widget( 'woocommerce_dashboard_widget_stats', __( 'WooCommerce order stats', 'woocommerce' ), array( $this, 'wc_dashboard_widget_order_stats' ) );
+        wp_add_dashboard_widget( 'woocommerce_dashboard_widget_stats', __( 'WooCommerce order stats', 'woocommerce' ), array( $this, 'wc_dashboard_widget_order_stats' ), '', 'side', 'high' );
     }
 
     function wc_dashboard_widget_order_stats() {
@@ -61,86 +61,86 @@ class Widget_order_stats {
         }
 
         ?>
-
-<li class='on-hold-orders'>
-    <a href="<?php echo esc_url( admin_url( 'edit.php?post_status=wc-on-hold&amp;post_type=shop_order' ) ); ?>">
-        <?php
+<ul>
+    <li class='on-hold-orders'>
+        <a href="<?php echo esc_url( admin_url( 'edit.php?post_status=wc-on-hold&amp;post_type=shop_order' ) ); ?>">
+            <?php
         printf(
             _n( '%s order on-hold', '%s orders on-hold', $on_hold_count, 'woocommerce' ),
             $on_hold_count
         );
         ?>
-    </a>
-</li>
+        </a>
+    </li>
 
-<li class='processing-orders'>
-    <a href="<?php echo esc_url( admin_url( 'edit.php?post_status=wc-processing&amp;post_type=shop_order' ) ); ?>">
-        <?php
+    <li class='processing-orders'>
+        <a href="<?php echo esc_url( admin_url( 'edit.php?post_status=wc-processing&amp;post_type=shop_order' ) ); ?>">
+            <?php
 
         printf(
             _n( '%s order awaiting processing', '%s orders awaiting processing', $processing_count, 'woocommerce' ),
             $processing_count
         );
         ?>
-    </a>
-</li>
+        </a>
+    </li>
 
-<li class='pending-orders'>
-    <a href="<?php echo esc_url( admin_url( 'edit.php?post_status=wc-pending&amp;post_type=shop_order' ) ); ?>">
-        <?php
+    <li class='pending-orders'>
+        <a href="<?php echo esc_url( admin_url( 'edit.php?post_status=wc-pending&amp;post_type=shop_order' ) ); ?>">
+            <?php
         printf(
             _n( '%s order pending', '%s orders pending', $pending_count, 'woocommerce' ),
             $pending_count
         );
         ?>
-    </a>
-</li>
+        </a>
+    </li>
 
-<li class='completed-orders'>
-    <a href="<?php echo esc_url( admin_url( 'edit.php?post_status=wc-completed&amp;post_type=shop_order' ) ); ?>">
-        <?php
+    <li class='completed-orders'>
+        <a href="<?php echo esc_url( admin_url( 'edit.php?post_status=wc-completed&amp;post_type=shop_order' ) ); ?>">
+            <?php
         printf(
             _n( '%s order completed', '%s orders completed', $completed_count, 'woocommerce' ),
             $completed_count
         );
 
         ?>
-    </a>
-</li>
+        </a>
+    </li>
 
-<li class='failed-orders'>
-    <a href="<?php echo esc_url( admin_url( 'edit.php?post_status=wc-failed&amp;post_type=shop_order' ) ); ?>">
-        <?php
+    <li class='failed-orders'>
+        <a href="<?php echo esc_url( admin_url( 'edit.php?post_status=wc-failed&amp;post_type=shop_order' ) ); ?>">
+            <?php
         printf(
             _n( '%s order failed', '%s orders failed', $failed_count, 'woocommerce' ),
             $failed_count
         );
         ?>
-    </a>
-</li>
+        </a>
+    </li>
 
-<li class='refunded-orders'>
-    <a href="<?php echo esc_url( admin_url( 'edit.php?post_status=wc-refunded&amp;post_type=shop_order' ) ); ?>">
-        <?php
+    <li class='refunded-orders'>
+        <a href="<?php echo esc_url( admin_url( 'edit.php?post_status=wc-refunded&amp;post_type=shop_order' ) ); ?>">
+            <?php
         printf(
             _n( '%s order refunded', '%s orders refunded', $refunded_count, 'woocommerce' ),
             $refunded_count
         );
         ?>
-    </a>
-</li>
+        </a>
+    </li>
 
-<li class='cancelled-orders'>
-    <a href="<?php echo esc_url( admin_url( 'edit.php?post_status=wc-cancelled&amp;post_type=shop_order' ) ); ?>">
-        <?php
+    <li class='cancelled-orders'>
+        <a href="<?php echo esc_url( admin_url( 'edit.php?post_status=wc-cancelled&amp;post_type=shop_order' ) ); ?>">
+            <?php
         printf(
             _n( '%s order cancelled', '%s orders cancelled', $cancelled_count, 'woocommerce' ),
             $cancelled_count
         );
         ?>
-    </a>
-</li>
-
+        </a>
+    </li>
+</ul>
 <?php
     }
 
