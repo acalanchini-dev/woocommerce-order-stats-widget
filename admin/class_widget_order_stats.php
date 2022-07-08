@@ -141,6 +141,7 @@ class Widget_order_stats {
         </a>
     </li>
 </ul>
+
 <?php
     }
 
