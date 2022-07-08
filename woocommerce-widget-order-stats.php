@@ -13,6 +13,11 @@
 * Update URI:        https://example.com/my-plugin/
 * Text Domain:       wc-widget-order-stats
 * Domain Path:       /languages
+*
+*
+* @since      1.0.0
+* @package    wc-widget-order-stats
+* @author     Alessio Calanchini <ac.calanchini@gmail.com>
 */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -31,6 +36,8 @@ if ( ! class_exists( 'Woocommerce_Widget_Order_stats' ) ) {
 
             // Declare the methods
             $this->define_constants();
+            $this->load_dependencies();
+          
 
         }
         /**
@@ -38,8 +45,8 @@ if ( ! class_exists( 'Woocommerce_Widget_Order_stats' ) ) {
         */
 
         public function define_constants() {
-            define( 'WCOS_PATH', plugin_dir_path( __FILE__ ) );
-            define( 'WCOS_URL', plugin_dir_url( __FILE__ ) );
+            define( 'WCOS_PATH', plugin_dir_path( __FILE__ ) );//path fino alla cartella plugin
+            define( 'WCOS_URL', plugin_dir_url( __FILE__ ) );//url fino alla cartella plugin
             define( 'WCOS_VERSION', '1.0.0' );
             define( 'WCOS_TEXTDOMAIN', 'wc-widget-order-stats' );
         }
@@ -55,12 +62,12 @@ if ( ! class_exists( 'Woocommerce_Widget_Order_stats' ) ) {
         private function load_dependencies() {
 
             /**
-            * The class responsible for orchestrating the actions and filters of the
-            * core plugin.
+            * The class responsible ...
             */
-            require_once WCOS_PATH. 'includes/class-order-stats-widget.php';
+            require_once( WCOS_PATH . 'admin/class_widget_order_stats.php' );
+           
 
-            $this->loader = new Wccb_Loader();
+           
 
         }
 
