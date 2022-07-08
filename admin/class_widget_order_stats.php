@@ -144,5 +144,7 @@ class Widget_order_stats {
 <?php
     }
 
+
+
 }
 new Widget_order_stats();
