@@ -1,5 +1,5 @@
-=== Plugin Name ===
-Contributors: (this should be a list of wordpress.org userid's)
+=== Woocommerce widget order stats ===
+Contributors: alessioc85
 Donate link: 
 Tags: woocommerce, widget, order, dashboard, stats
 Requires at least: 5.0
